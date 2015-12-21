@@ -137,7 +137,7 @@ int main()
 	gos[2]->setLocation(glm::vec3(1, 0, 0));
 	gos[3]->setLocation(glm::vec3(3, 0, 0));
 	for (int i = 0; i < 4; i++) gos[i]->setAngularVelocity(glm::two_pi<float>() * 0.2f);
-#elif PADDLEGAME
+#elif defined PADDLEGAME
 	Mesh* box = new Mesh("box.obj", "TestTexture.png");
 	gos.push_back(new GameObject(box, shaderProgramIndex)); // PADDLE 0 (player 1)
 	gos.push_back(new GameObject(box, shaderProgramIndex)); // PADDLE 1 (player 2)
@@ -163,7 +163,7 @@ int main()
 		// Process queued window and input callback events.
 		glfwPollEvents();
 
-#ifdef PADDLEGAMELOGIC
+#ifdef PADDLEGAME
 		// LOGIC FOR PADDLE GAME (move to Game class?)
 		// Move paddles
 		glm::vec3 paddleSpeed = glm::vec3(0, 3, 0);
